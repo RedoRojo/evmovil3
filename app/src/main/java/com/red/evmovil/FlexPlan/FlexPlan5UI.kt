@@ -251,7 +251,7 @@ fun FlexPlanUI() {
                 modifier = Modifier.size(56.dp)
             ) {
                 Icon(
-                    imageVector = Icons.Default.Phone,
+                    imageVector = Icons.Filled.Whatsapp,
                     contentDescription = "WhatsApp",
                     tint = Color.White
                 )
