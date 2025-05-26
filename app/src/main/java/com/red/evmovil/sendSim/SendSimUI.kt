@@ -36,7 +36,7 @@ fun PlanOrderUI() {
 
     // Estado del mapa
     var selectedLocation by remember { mutableStateOf<LatLng?>(null) }
-    val defaultLocation = LatLng(-17.37166, -66.14409) // Ciudad de México
+    val defaultLocation = LatLng(-17.37166, -66.14409)
     val cameraPositionState = rememberCameraPositionState {
         position = CameraPosition.fromLatLngZoom(defaultLocation, 15f)
     }
@@ -58,22 +58,13 @@ fun PlanOrderUI() {
                 modifier = Modifier.fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                IconButton(
-                    onClick = { /* Handle back navigation */ }
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.ArrowBack,
-                        contentDescription = "Back",
-                        tint = Color.White
-                    )
-                }
 
                 Column(
                     modifier = Modifier.weight(1f),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
                     Text(
-                        text = "Plan FLEX 5",
+                        text = "Elegiste un plan",
                         fontSize = 20.sp,
                         fontWeight = FontWeight.Bold,
                         color = Color.White
@@ -85,8 +76,7 @@ fun PlanOrderUI() {
                     )
                 }
 
-                // Placeholder for balance
-                Spacer(modifier = Modifier.width(48.dp))
+
             }
         }
 

@@ -26,9 +26,10 @@ import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowLeft
 
 @Composable
-fun Plan5UI(
+fun Plan8UI(
     onGoToSendSim: () -> Unit,
-    onGoToPlan8: () -> Unit
+    onGoToPlan5: () -> Unit,
+    onGoToPlan10: () -> Unit
 ) {
     val coralColor = Color(0xFFFF6B6B)
     val lightCoralColor = Color(0xFFFFE5E5)
@@ -71,7 +72,19 @@ fun Plan5UI(
                 .fillMaxWidth()
                 .padding(horizontal = 12.dp)
         ) {
-
+            IconButton(
+                onClick = onGoToPlan5,
+                modifier = Modifier
+                    .align(Alignment.CenterStart)
+                    .offset(x = (-40).dp)
+            ) {
+                Icon(
+                    imageVector = Icons.AutoMirrored.Filled.KeyboardArrowLeft,
+                    contentDescription = "Plan anterior",
+                    tint = coralColor,
+                    modifier = Modifier.size(40.dp)
+                )
+            }
             Card(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -88,7 +101,7 @@ fun Plan5UI(
                 ) {
                     // Plan Title
                     Text(
-                        text = "Plan FLEX 5",
+                        text = "Plan FLEX 8",
                         fontSize = 20.sp,
                         fontWeight = FontWeight.Bold,
                         color = coralColor
@@ -96,7 +109,6 @@ fun Plan5UI(
 
                     Spacer(modifier = Modifier.height(16.dp))
 
-                    // Price Section
                     Row(
                         verticalAlignment = Alignment.Bottom,
                         horizontalArrangement = Arrangement.Center
@@ -107,7 +119,7 @@ fun Plan5UI(
                             color = grayTextColor
                         )
                         Text(
-                            text = "$270",
+                            text = "$370",
                             fontSize = 16.sp,
                             color = grayTextColor,
                             textDecoration = TextDecoration.LineThrough
@@ -131,7 +143,7 @@ fun Plan5UI(
                             color = grayTextColor
                         )
                         Text(
-                            text = "$199",
+                            text = "$299",
                             fontSize = 28.sp,
                             fontWeight = FontWeight.Bold,
                             color = darkGrayTextColor
@@ -146,7 +158,7 @@ fun Plan5UI(
                     Spacer(modifier = Modifier.height(8.dp))
 
                     Text(
-                        text = "5GB",
+                        text = "8GB",
                         fontSize = 18.sp,
                         fontWeight = FontWeight.Bold,
                         color = grayTextColor
@@ -255,7 +267,7 @@ fun Plan5UI(
             }
 
             IconButton(
-                onClick = onGoToPlan8,
+                onClick = onGoToPlan10,
                 modifier = Modifier
                     .align(Alignment.CenterEnd)
                     .offset(x = (40).dp)
@@ -299,61 +311,15 @@ fun Plan5UI(
 
 }
 
-@Composable
-fun FeatureItem(
-    icon: ImageVector,
-    text: String,
-    iconColor: Color
-) {
-    Row(
-        modifier = Modifier.fillMaxWidth(),
-        verticalAlignment = Alignment.Top
-    ) {
-        Icon(
-            imageVector = icon,
-            contentDescription = null,
-            tint = iconColor,
-            modifier = Modifier.size(20.dp)
-        )
-        Spacer(modifier = Modifier.width(12.dp))
-        Text(
-            text = text,
-            fontSize = 14.sp,
-            color = Color(0xFF333333),
-            lineHeight = 20.sp,
-            modifier = Modifier.weight(1f)
-        )
-    }
-}
 
 @Composable
-fun SocialMediaIcon(
-    icon: ImageVector,
-    backgroundColor: Color
-) {
-    Box(
-        modifier = Modifier
-            .size(32.dp)
-            .clip(CircleShape)
-            .background(backgroundColor),
-        contentAlignment = Alignment.Center
-    ) {
-        Icon(
-            imageVector = icon,
-            contentDescription = null,
-            tint = Color.White,
-            modifier = Modifier.size(16.dp)
-        )
-    }
-}
-
-@Composable
-fun FlexPlan5UI(
+fun FlexPlan8UI(
     onGoToSendSim: () -> Unit,
-    onGoToPlan8: () -> Unit
+    onGoToPlan5: () -> Unit,
+    onGoToPlan10: () -> Unit
 ) {
     MaterialTheme {
-        Plan5UI(onGoToSendSim, onGoToPlan8)
+        Plan8UI(onGoToSendSim,onGoToPlan5, onGoToPlan10)
     }
 }
 
