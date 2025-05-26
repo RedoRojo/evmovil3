@@ -26,6 +26,8 @@ navVersion = "2.8.3"
 hiltNavViewModel = "1.1.0"
 navigationComposeAndroid = "2.9.0"
 materialIcons = "1.5.4"
+maps-compose = "2.11.4"
+maps-playservices = "18.2.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -80,7 +82,8 @@ hilt-navigation = { group = "androidx.hilt", name = "hilt-navigation-compose", v
 androidx-navigation-compose-android = { group = "androidx.navigation", name = "navigation-compose-android", version.ref = "navigationComposeAndroid" }
 compose-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "materialIcons"}
 
-
+maps-compose = { module = "com.google.maps.android:maps-compose", version.ref = "maps-compose" }
+maps-playservices = { module = "com.google.android.gms:play-services-maps", version.ref = "maps-playservices" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

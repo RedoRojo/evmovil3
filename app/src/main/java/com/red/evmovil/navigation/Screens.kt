@@ -6,4 +6,5 @@ sealed class Screens (
     object FlexPlan5 : Screens("flex_plan_5")
     object FlexPlan8 : Screens("flex_plan_8")
     object FlexPlan10 : Screens("flex_plan_10")
+    object SendSim : Screens("send_sim")
 }

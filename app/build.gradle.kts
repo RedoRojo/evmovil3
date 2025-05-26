@@ -74,6 +74,8 @@ dependencies {
     implementation(project(":data"))
     implementation(project(":framework"))
     implementation(libs.compose.icons.extended)
+    implementation(libs.maps.compose)
+    implementation(libs.maps.playservices)
 }
 
 kapt {

@@ -1,4 +1,4 @@
-package com.red.evmovil.FlexPlan
+package com.red.evmovil.plans
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -24,7 +24,9 @@ import android.content.Intent
 import android.net.Uri
 
 @Composable
-fun FlexPlanUI() {
+fun FlexPlanUI(
+    onGoToSendSim: () -> Unit
+) {
     val coralColor = Color(0xFFFF6B6B)
     val lightCoralColor = Color(0xFFFFE5E5)
     val grayTextColor = Color(0xFF666666)
@@ -224,7 +226,7 @@ fun FlexPlanUI() {
 
                 // CTA Button
                 Button(
-                    onClick = { /* Handle click */ },
+                    onClick = onGoToSendSim,
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(56.dp),
@@ -317,10 +319,11 @@ fun SocialMediaIcon(
     }
 }
 
-@Preview(showBackground = true)
 @Composable
-fun FlexPlan5UI() {
+fun FlexPlan5UI(
+    onGoToSendSim: () -> Unit
+) {
     MaterialTheme {
-        FlexPlanUI()
+        FlexPlanUI(onGoToSendSim)
     }
 }

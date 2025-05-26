@@ -4,7 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.red.evmovil.FlexPlan.FlexPlan5UI
+import com.red.evmovil.plans.FlexPlan5UI
+import com.red.evmovil.sendSim.SendSimUI
 
 @Composable
 fun AppNavigation() {
@@ -16,8 +17,7 @@ fun AppNavigation() {
     ) {
         composable(Screens.FlexPlan5.route) {
             FlexPlan5UI(
-//                onGoToSearch = { navController.navigate(Screens.Search.route) },
-//                onGoToLiked = { navController.navigate(Screens.Liked.route) }
+                onGoToSendSim = { navController.navigate(Screens.SendSim.route) }
             )
         }
 
@@ -32,5 +32,8 @@ fun AppNavigation() {
 //                onBack = { navController.popBackStack() }
 //            )
 //        }
+        composable(Screens.SendSim.route) {
+            SendSimUI()
+        }
     }
 }
