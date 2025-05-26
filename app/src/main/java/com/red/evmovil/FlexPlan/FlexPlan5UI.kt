@@ -19,6 +19,9 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.platform.LocalContext
+import android.content.Intent
+import android.net.Uri
 
 @Composable
 fun FlexPlanUI() {
@@ -26,6 +29,8 @@ fun FlexPlanUI() {
     val lightCoralColor = Color(0xFFFFE5E5)
     val grayTextColor = Color(0xFF666666)
     val darkGrayTextColor = Color(0xFF333333)
+
+    val context = LocalContext.current
 
     Column(
         modifier = Modifier
@@ -246,7 +251,11 @@ fun FlexPlanUI() {
             horizontalArrangement = Arrangement.End
         ) {
             FloatingActionButton(
-                onClick = { /* Handle WhatsApp click */ },
+                onClick = {
+                    val url = "https://wa.me/59168301052?text=Quiero mas informacion de los planes"
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                    context.startActivity(intent)
+                },
                 containerColor = Color(0xFF25D366),
                 modifier = Modifier.size(56.dp)
             ) {
